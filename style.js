@@ -219,14 +219,13 @@ class Productocontrolador {
 
 }
 
-let objL = {id:1, nombre:"Hoodie Classic", precio:13000, descripcion: "Buzo negro Oversize Classic", img:"../img/clothes-chica-redu.jpg" }
 
-const productoUno = new Producto({id:1, nombre:"Hoodie Classic", precio:13000, descripcion: "Buzo negro Oversize Classic", img:"../img/clothes-chica-redu.jpg" })
-//const productoUno = new Producto(1, "Hoodie Classic", 13000, "Buzo negro Oversize Classic", "../img/clothes-chica-redu.jpg")
 
-const productoDos = new Producto({id:2, nombre:"Hoodie System", precio:16000, descripcion:"Buzo negro Oversize System", img:"../img/clothes-escalera-redu.jpg"})
+const productoUno = new Producto({id:1, nombre:"Hoodie Classic", precio:13000, descripcion: "Buzo negro Oversize Classic", img:"./img/clothes-chica-redu.jpg" })
 
-const productoTres = new Producto({id:3, nombre:"Remera Classic", precio:10000, descripcion:"Remera negra Oversize Classic", img:"../img/clothes-reme-classic-redu.jpg"})
+const productoDos = new Producto({id:2, nombre:"Hoodie System", precio:16000, descripcion:"Buzo negro Oversize System", img:"./img/clothes-escalera-redu.jpg"})
+
+const productoTres = new Producto({id:3, nombre:"Remera Classic", precio:10000, descripcion:"Remera negra Oversize Classic", img:"./img/clothes-reme-classic-redu.jpg"})
 
 const carrito = new Carrito()
 carrito.levantarStorage()
