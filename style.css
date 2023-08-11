@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+#mis_productos {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    
+}
+
+.card-uno{
+    padding: 1rem;
+}
+
+.card-uno a {
+    font-family: "Space Grotesk", sans-serif;
+    margin: 10px;
+    border: 8px solid #333333;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: none;
+    color: #eeeeee;
+    background-color: #333333;
+}
+
+.card-uno a:hover {
+    border: 8px solid #855235;
+    background-color: #855235;
+    color: white; 
+}
+
+.logo{
+    width: 8rem;
+}
