@@ -21,7 +21,39 @@ class Producto {
         return false
     }
 
-    
+    descripcionCarrito() {
+        return `
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="${this.img}" class="img-fluid rounded-start class="chau"" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">${this.nombre}</h5>
+                        <p class="card-text">Cantidad: <button class="btn btn-secondary btn-sm" id="minus-${this.id}">-</button> ${this.cantidad} <button class="btn btn-secondary btn-sm" id="plus-${this.id}">+</button></p>
+                        <p class="card-text">$${this.precio}</p>
+                        <p class="card-text"><small class="text-body-secondary">${this.descripcion}</small></p>
+                        <button class="btn btn-secondary " id="eliminar-${this.id}"><i class="fa-solid fa-trash" style="color: #0f0f0f;"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `
+    }
+
+    descripcionHTML() {
+        return `<div class="div-uno" style="width: 16rem;" gap-5>
+            <img src="${this.img}" class="card-img-top" >
+            <div class="card-uno">
+                <h2>${this.nombre}</h2>
+                <p>$${this.precio}</p>
+                <p>${this.descripcion}</p>
+                <button id="pro${this.id}">Buy Now</button>
+            </div>
+            </div>
+            `
+    }
 }
 
 class Carrito {
@@ -162,6 +194,17 @@ class Productocontrolador {
         this.listaproductos = []
     }
 
+    async cargarProductos() {
+        try {
+            let resp = await fetch("archivo.json");
+            let listaproductos = await resp.json();
+            this.listaproductos = listaproductos.map(producto => new Producto(producto));
+            this.verProductos();
+        } catch (error) {
+            console.error("Error al cargar los productos:", error);
+        }
+    }
+
     agregar(producto) {
         this.listaproductos.push(producto)
     }
@@ -198,11 +241,11 @@ class Productocontrolador {
 
 
 
-fetch("archivo.json")
-.then(resp => resp.json())
-.then(listaproductos => {
+async function levProductos() {
+    let resp = await fetch("archivo.json")
+    let listaproductos = await resp.json()
     render(listaproductos)
-})
+}
 
 
 function render(arr){
@@ -231,5 +274,4 @@ carrito.eventoFinalizarCompra()
 
 const controlador_productos = new Productocontrolador()
 
-
-controlador_productos.verProductos()
+controlador_productos.cargarProductos();
