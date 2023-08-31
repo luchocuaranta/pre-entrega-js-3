@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "nombre": "Hoodie Classic", 
+        "precio": 13000, 
+        "descripcion": "Buzo negro Oversize Classic", 
+        "img": "./img/clothes-chica-redu.jpg" 
+    },
+    { 
+        "id": 2,
+        "nombre": "Hoodie System", 
+        "precio": 16000, 
+        "descripcion": "Buzo negro Oversize System", 
+        "img": "./img/clothes-escalera-redu.jpg" 
+    },
+    { 
+        "id": 3, 
+        "nombre": "Remera Classic", 
+        "precio": 10000, 
+        "descripcion": "Remera negra Oversize Classic", 
+        "img": "./img/clothes-reme-classic-redu.jpg" 
+    }
+
+]

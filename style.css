@@ -13,17 +13,17 @@
     object-fit: cover;
     justify-content: center;
     align-self: center;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    row-gap: 1rem;
-    
+    gap: 4rem;
+    margin-top: 1rem;
 }
 
 .card-uno{
     padding: 1rem;
 }
 
-.card-uno a {
+.card-uno button {
     font-family: "Space Grotesk", sans-serif;
     margin: 10px;
     border: 8px solid #333333;
@@ -34,7 +34,7 @@
     background-color: #333333;
 }
 
-.card-uno a:hover {
+.card-uno button:hover {
     border: 8px solid #855235;
     background-color: #855235;
     color: white; 
@@ -43,3 +43,13 @@
 .logo{
     width: 8rem;
 }
+
+
+
+
+/*async function levProductos() {
+    let resp = await fetch("archivo.json")
+    let listaproductos = await resp.json()
+    render(listaproductos)
+
+}*/
